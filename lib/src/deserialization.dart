@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'serialization.dart' show bitsPerByte;
+import 'package:huff/src/serialization.dart' show bitsPerByte;
 
 class Deserialization {
   const Deserialization({required this.table, required this.message});

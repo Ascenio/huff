@@ -2,10 +2,7 @@
 
 import 'dart:io';
 
-import 'deserialization.dart';
-import 'encoder.dart';
-import 'serialization.dart';
-import 'tree.dart';
+import 'package:huff/huff.dart';
 
 void printUsage() {
   print('''

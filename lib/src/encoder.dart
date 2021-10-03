@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
-import 'helpers.dart';
-import 'tree.dart';
+import 'package:huff/huff.dart';
+import 'package:huff/src/helpers.dart';
 
 Uint8List encode(Uint8List bytes, Map<int, List<int>> table) {
   final builder = BytesBuilder();
