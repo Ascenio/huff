@@ -34,9 +34,10 @@ Uint8List bytesFromList(List<int> encoded) {
     bitsNeeded = log2(encoded.length).ceil();
     paddingSize = pow(2, bitsNeeded).toInt() - encoded.length;
   }
-  final builder = BytesBuilder()
-    ..add(encoded)
-    ..add(List.generate(paddingSize, (_) => 0));
+  final builder = BytesBuilder()..add(encoded);
+  for (var i = 0; i < paddingSize; i++) {
+    builder.addByte(0);
+  }
   final bits = builder.takeBytes();
   assert(bits.length % 2 == 0);
   final bytesCount = bits.length ~/ bitsPerByte;
