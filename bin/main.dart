@@ -1,4 +1,4 @@
-import 'cli.dart';
+import 'package:huff/huff.dart';
 
 void main(List<String> args) {
   final mode = validateArgs(args);
