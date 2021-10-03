@@ -4,9 +4,11 @@ import 'helpers.dart';
 import 'tree.dart';
 
 Uint8List encode(Uint8List bytes, Map<int, List<int>> table) {
-  final list =
-      bytes.map((byte) => table[byte]!).expand((bytes) => bytes).toList();
-  return Uint8List.fromList(list);
+  final builder = BytesBuilder();
+  for (final byte in bytes) {
+    builder.add(table[byte]!);
+  }
+  return builder.takeBytes();
 }
 
 Uint8List decode(Uint8List bytes, Tree<int> tree) {
