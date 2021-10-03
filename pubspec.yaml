@@ -1,0 +1,13 @@
+name: huff
+description: Huffman coding implementation with greedy method
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+
+dev_dependencies:
+  test: ">=1.17.0 <1.18.0"
+  very_good_analysis: ^2.3.0
+dependencies:
+  collection: ^1.15.0

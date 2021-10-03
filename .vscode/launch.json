@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "compress",
+            "request": "launch",
+            "type": "dart",
+            "program": "${cwd}/bin/main.dart",
+            "args": [
+                "-c",
+                "input.txt",
+                "compressed.txt",
+            ],
+        },
+        {
+            "name": "decompress",
+            "request": "launch",
+            "type": "dart",
+            "program": "${cwd}/bin/main.dart",
+            "args": [
+                "-d",
+                "compressed.txt",
+                "decompressed.txt",
+            ],
+        },
+    ]
+}
