@@ -18,7 +18,7 @@ Uint8List bytesFromTable(Map<int, List<int>> table) {
   final builder = BytesBuilder()..add(bytesFromNumber(table.entries.length));
   for (final entry in table.entries) {
     builder
-      ..add(bytesFromNumber(entry.key))
+      ..addByte(singleByteFromNumber(entry.key))
       ..add(bytesFromList(entry.value));
   }
   return builder.takeBytes();
@@ -59,6 +59,8 @@ Uint8List bytesFromBits(List<int> bits) {
   }
   return builder.takeBytes();
 }
+
+int singleByteFromNumber(int number) => number & 255;
 
 Uint8List bytesFromNumber(int number) {
   final builder = BytesBuilder();

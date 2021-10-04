@@ -35,7 +35,7 @@ Result<Map<int, List<int>>> tableFromBytes(List<int> bytes, int index) {
   index = mapLengthResult.index;
   final table = <int, List<int>>{};
   for (var i = 0; i < mapLengthResult.value; i++) {
-    final keyResult = numberFromBytes(bytes, index);
+    final keyResult = numberFromSingleByte(bytes, index);
     index = keyResult.index;
     final valueResult = listFromBytes(bytes, index);
     index = valueResult.index;
@@ -65,6 +65,10 @@ List<int> bitsFromByte(int byte) {
     bits.add(bit);
   }
   return bits;
+}
+
+Result<int> numberFromSingleByte(List<int> bytes, int index) {
+  return Result(value: bytes[index], index: index + 1);
 }
 
 Result<int> numberFromBytes(List<int> bytes, int index) {
